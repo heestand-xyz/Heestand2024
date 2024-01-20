@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Anton Heestand</title>
+</head>
+<body>
+	<div class="base">
+		<picture>
+		  <source srcset="assets/images/simulator-background-dark.png" media="(prefers-color-scheme: dark)">
+		  <img class="canvasImage canvasBackground" src="assets/images/simulator-background-light.png" alt="visionOS background screenshot">
+		</picture>
+		<picture>
+		    <!-- Desktop Dark Mode -->
+		    <source srcset="assets/images/simulator-desktop-dark.png"
+		            media="(min-width: 750px) and (prefers-color-scheme: dark)">
+		    <!-- Desktop Light Mode -->
+		    <source srcset="assets/images/simulator-desktop-light.png"
+		            media="(min-width: 750px) and (prefers-color-scheme: light)">
+		    <!-- Mobile Dark Mode -->
+		    <source srcset="assets/images/simulator-mobile-dark.png"
+		            media="(max-width: 750px) and (prefers-color-scheme: dark)">
+		    <!-- Mobile Light Mode -->
+		    <source srcset="assets/images/simulator-mobile-light.png"
+		            media="(max-width: 750px) and (prefers-color-scheme: light)">
+		    <!-- Fallback Image -->
+		    <img class="canvasImage canvasForeground" src="assets/images/simulator-desktop-light.png" alt="visionOS foreground screenshot">
+		</picture>
+		<div class="mainFrame desktopMainFrame"></div>
+		<div class="mainFrame mobileMainFrame"></div>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
