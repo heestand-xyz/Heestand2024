@@ -8,10 +8,20 @@
 </head>
 <body>
 	<div class="base">
-		<picture>
+		<div class="spinner">
+		  <div class="bar1"></div>
+		  <div class="bar2"></div>
+		  <div class="bar3"></div>
+		  <div class="bar4"></div>
+		  <div class="bar5"></div>
+		  <div class="bar6"></div>
+		  <div class="bar7"></div>
+		  <div class="bar8"></div>
+		</div>
+		<!-- <picture>
 		  <source srcset="assets/images/simulator-background-dark.png" media="(prefers-color-scheme: dark)">
-		  <img class="canvasImage canvasBackground" src="https://github.com/heestand-xyz/Heestand2024/blob/main/Website/assets/images/simulator-background-light.png?raw=true" alt="visionOS background screenshot">
-		</picture>
+		  <img class="canvasImage canvasBackground" src="https://github.com/heestand-xyz/Heestand2024/blob/main/Website/assets/images/simulator-background-light.png?raw=true" alt="visionOS background screenshot" onload="backgroundLoaded();">
+		</picture> -->
 		<picture>
 		    <!-- Desktop Dark Mode -->
 		    <source srcset="https://github.com/heestand-xyz/Heestand2024/blob/main/Website/assets/images/simulator-desktop-dark.png?raw=true"
@@ -26,7 +36,7 @@
 		    <source srcset="https://github.com/heestand-xyz/Heestand2024/blob/main/Website/assets/images/simulator-mobile-light.png?raw=true"
 		            media="(max-width: 750px) and (prefers-color-scheme: light)">
 		    <!-- Fallback Image -->
-		    <img class="canvasImage canvasForeground" src="https://github.com/heestand-xyz/Heestand2024/blob/main/Website/assets/images/simulator-desktop-light.png?raw=true" alt="visionOS foreground screenshot">
+		    <img class="canvasImage canvasForeground" src="https://github.com/heestand-xyz/Heestand2024/blob/main/Website/assets/images/simulator-desktop-light.png?raw=true" alt="visionOS foreground screenshot" onload="foregroundLoaded();">
 		</picture>
 		<div class="mainFrame desktopMainFrame"></div>
 		<div class="mainFrame mobileMainFrame"></div>

@@ -483,6 +483,7 @@ let canvasForeground = document.getElementsByClassName('canvasForeground')[0];
 let desktopMainFrame = document.getElementsByClassName('desktopMainFrame')[0];
 let mobileMainFrame = document.getElementsByClassName('mobileMainFrame')[0];
 
+let spinner = document.getElementsByClassName('spinner')[0];
 
 let isMobile = function() {
   return window.innerWidth < mobileWidth
@@ -494,7 +495,6 @@ let targetZoom = function() {
     return 1.25
   }
 }
-
 
 var isAnimated = false
 var zoom = 1.0;
@@ -546,8 +546,8 @@ let resize = function(event) {
     imageHeight = windowSize[0] / imageAspectRatio
   }
 
-  canvasBackground.width = imageWidth * zoom;
-  canvasBackground.height = imageHeight * zoom;
+  // canvasBackground.width = imageWidth * zoom;
+  // canvasBackground.height = imageHeight * zoom;
   canvasForeground.width = imageWidth * zoom;
   canvasForeground.height = imageHeight * zoom;
 
@@ -593,8 +593,24 @@ let resize = function(event) {
 window.onresize = resize
 resize()
 
-setTimeout(() => {
-	var opacity = 0.0
+// var didLoadBackground = false
+// let backgroundLoaded = function() {
+//   didLoadBackground = true
+//   if (didLoadForeground) {
+//     loaded()
+//   }
+// } 
+
+var didLoadForeground = false
+let foregroundLoaded = function() {
+  if (didLoadForeground) { return }
+  didLoadForeground = true
+  spinner.remove();
+  loaded()
+}
+
+let loaded = function() {
+  var opacity = 0.0
   if (isMobile()) {
     mobileMainFrame.style.display = "block";
     desktopMainFrame.style.display = "none";
@@ -603,8 +619,8 @@ setTimeout(() => {
     mobileMainFrame.style.display = "none";
   }
   let fade = setInterval(() => {
-		opacity += .0075
-		let smoothFraction = Math.cos(opacity * Math.PI + Math.PI) / 2.0 + 0.5;
+    opacity += .0075
+    let smoothFraction = Math.cos(opacity * Math.PI + Math.PI) / 2.0 + 0.5;
     canvasForeground.style.opacity = smoothFraction;
     if (isMobile()) {
       mobileMainFrame.style.opacity = smoothFraction;
@@ -617,5 +633,5 @@ setTimeout(() => {
         clearInterval(fade);
         isAnimated = true
     }
-	}, 10);
-}, 1000)
+  }, 10);
+}

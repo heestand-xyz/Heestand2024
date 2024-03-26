@@ -1,9 +1,16 @@
 body {
-  color: white;
   font-family: -apple-system, sans-serif;
   margin: 0;
-  background-color: gray;
+  background-color: white;
+  color: black;
   overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
 }
 
 .base {}
@@ -34,4 +41,77 @@ body {
 
 a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+div.spinner {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.spinner div {
+  width: 7.5%;
+  height: 20%;
+  background: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  -webkit-border-radius: 50px;
+  -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  -webkit-animation: fade 1s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.spinner div {
+    background: white;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 1;}
+  to {opacity: 0.25;}
+}
+
+div.spinner div.bar1 {
+  -webkit-transform:rotate(0deg) translate(0, -130%);
+  -webkit-animation-delay: -0.875s;
+}    
+
+div.spinner div.bar2 {
+  -webkit-transform:rotate(45deg) translate(0, -130%); 
+  -webkit-animation-delay: -0.750s;
+}
+
+div.spinner div.bar3 {
+  -webkit-transform:rotate(90deg) translate(0, -130%); 
+  -webkit-animation-delay: -0.625s;
+}
+div.spinner div.bar4 {
+  -webkit-transform:rotate(135deg) translate(0, -130%); 
+  -webkit-animation-delay: -0.500s;
+}
+div.spinner div.bar5 {
+  -webkit-transform:rotate(180deg) translate(0, -130%); 
+  -webkit-animation-delay: -0.375s;
+}
+div.spinner div.bar6 {
+  -webkit-transform:rotate(225deg) translate(0, -130%); 
+  -webkit-animation-delay: -0.25s;
+}
+div.spinner div.bar7 {
+  -webkit-transform:rotate(270deg) translate(0, -130%); 
+  -webkit-animation-delay: -0.125s;
+}
+div.spinner div.bar8 {
+  -webkit-transform:rotate(315deg) translate(0, -130%); 
+  -webkit-animation-delay: 0s;
 }
