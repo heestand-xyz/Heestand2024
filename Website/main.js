@@ -492,7 +492,7 @@ let targetZoom = function() {
   if (isMobile()) {
     return 2.0
   } else {
-    return 1.25
+    return 1.5
   }
 }
 
