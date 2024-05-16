@@ -303,7 +303,7 @@ struct ContentView: View {
             Grid(horizontalSpacing: 16, verticalSpacing: 16) {
                 GridRow {
                     product(title: "Async Graphics",
-                            info: "20 & 3D graphics in Swift & Metal",
+                            info: "2D & 3D graphics in Swift & Metal",
                             url: "https://github.com/heestand-xyz/AsyncGraphics",
                             icon: Image("Package/AsyncGraphics"))
                     if !isMobile {
