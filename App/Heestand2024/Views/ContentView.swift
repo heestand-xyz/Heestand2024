@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     let isMobile: Bool
+    let isDarkMode: Bool
     
     @State private var size: CGSize = .zero
     @State private var ornamentSize: CGSize = .zero
@@ -58,6 +59,7 @@ struct ContentView: View {
                 gridBody
             }
         }
+        .colorScheme(isDarkMode ? .dark : .light)
         .coordinateSpace(name: "main")
         .read(size: $size)
         .sheet(item: $savePack) { pack in
@@ -237,7 +239,7 @@ struct ContentView: View {
     }
     
     private var sloganBody: some View {
-        Text("Learning by doing")
+        Text("Creating for creators")
             .font(.caption)
             .opacity(0.5)
             .frame(maxWidth: .infinity)
@@ -247,15 +249,15 @@ struct ContentView: View {
         bigContainer {
             Grid(horizontalSpacing: 16, verticalSpacing: 16) {
                 GridRow {
-                    product(title: "Render",
-                            info: "Video composer with layers on a timeline",
-                            url: "https://apps.apple.com/us/app/render-video-composer/id6444799341",
-                            icon: Image("App Icon/Render"))
+                    product(title: "Flow Nodes",
+                            info: "Create with no code.",
+                            url: "https://apps.apple.com/se/app/flow-nodes/id6501975062?l=en-GB",
+                            icon: Image("App Icon/Flow Nodes"))
                     if !isMobile {
-                        product(title: "Circles",
-                                info: "Live graphics node editor",
-                                url: "https://apps.apple.com/se/app/circles-node-editor/id1582312198",
-                                icon: Image("App Icon/Circles"))
+                        product(title: "Render",
+                                info: "Video composer with layers on a timeline",
+                                url: "https://apps.apple.com/us/app/render-video-composer/id6444799341",
+                                icon: Image("App Icon/Render"))
                         product(title: "Data OSC",
                                 info: "Send device data over WiFi",
                                 url: "https://apps.apple.com/app/data-osc/id6447833736",
@@ -511,8 +513,4 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(8)
     }
-}
-
-#Preview(windowStyle: .automatic) {
-    ContentView(isMobile: false)
 }

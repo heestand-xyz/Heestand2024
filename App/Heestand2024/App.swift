@@ -10,10 +10,14 @@ import SwiftUI
 @main
 struct Heestand2024App: App {
     
+    let isMobile = false
+    let isDarkMode = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(isMobile: true)
+            ContentView(isMobile: isMobile, isDarkMode: isDarkMode)
         }
-        .defaultSize(width: 400, height: 800)
+        .defaultSize(width: isMobile ? 400 : 1300,
+                     height: isMobile ? 800 : 700)
     }
 }

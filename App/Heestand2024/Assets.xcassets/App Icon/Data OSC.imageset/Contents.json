@@ -1,17 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "Data OSC.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "Data OSC (current iOS).png",
+      "idiom" : "universal"
     }
   ],
   "info" : {
